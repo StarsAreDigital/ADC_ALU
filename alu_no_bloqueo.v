@@ -1,4 +1,4 @@
-module ALU (
+module ALU_NB (
 	input [31:0] A,
 	input [31:0] B,
 	input [2:0] Sel,
@@ -18,7 +18,7 @@ module ALU (
 			3'b011: R <= A * B;						// multiplicacion
 			3'b100: R <= A - B;						// resta
 			3'b101: R <= A < B ? 32'b1 : 32'b0;		// ternario
-			default: R <= 32'b0;					// default
+			default: R <= 32'b0;					// default 0
 		endcase
 	end
 endmodule
