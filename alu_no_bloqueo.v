@@ -3,7 +3,7 @@ module alunb (
 	input [31:0] B,
 	input [2:0] Sel,
 	input CLK,
-	output reg R,
+	output reg [31:0] R,
 	output Zflag
 );
 	//Bandera cero
