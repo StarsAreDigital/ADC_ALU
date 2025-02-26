@@ -34,9 +34,9 @@ module alub (
 		
 	end
 	
-	if (result ==0) begin
-            ZeroFlag = 1;
+	if (R == 0) begin
+            Z = 1;
         end else begin
-            ZeroFlag = 0; 
+            Z = 0; 
         end
 endmodule
