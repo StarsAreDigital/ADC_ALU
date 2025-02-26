@@ -13,7 +13,6 @@ module alub (
 		case(*)
 		3'b001: initial
 		R = A + B;
-		
 		end
 		3'b010: initial
 		R = A & B;
@@ -34,7 +33,7 @@ module alub (
 		endcase
 		
 	end
-	assign Z == (R=0);
+	assign (Z=1) == (R=0);
 		
 	//PRUEBA
 endmodule
