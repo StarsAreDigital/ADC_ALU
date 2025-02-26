@@ -33,7 +33,10 @@ module alub (
 		endcase
 		
 	end
-	assign (Z=1) == (R=0);
-		
-	//PRUEBA
+	
+	if (result ==0) begin
+            ZeroFlag = 1;
+        end else begin
+            ZeroFlag = 0; 
+        end
 endmodule
