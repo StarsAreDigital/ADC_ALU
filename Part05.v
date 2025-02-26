@@ -2,6 +2,7 @@
 module alub (
 	input [31:0] A,
 	input [31:0] B,
+	input [2:0] sel,
 	output reg [31:0] R,
 	output reg Z
 	);
@@ -10,33 +11,31 @@ module alub (
 	always @ (*) 
 	
 	begin
-		case(*)
-		3'b001: initial
+		case(sel)
+		3'b001: begin
 		R = A + B;
 		end
-		3'b010: initial
+		3'b010: begin
 		R = A & B;
 		end
-		3'b011: initial
+		3'b011: begin
 		R = A | B;
 		end
-		3'b100: initial
+		3'b100: begin
 		R = A * B;
 		end
-		3'b101: initial
+		3'b101: begin
 		R = A - B;
 		end
-		3'b110: initial
+		3'b110: begin
 		R = A<B?1:0;
 		end
 		default: R = 32'd0;
 		endcase
 		
+		Z = (R == 32'd0);	
+		
 	end
+		
 	
-	if (R == 0) begin
-            Z = 1;
-        end else begin
-            Z = 0; 
-        end
 endmodule
